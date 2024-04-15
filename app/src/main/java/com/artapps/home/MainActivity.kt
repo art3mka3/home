@@ -2,7 +2,7 @@ package com.artapps.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.TextView
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -19,8 +19,19 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val textView = findViewById<TextView>(R.id.textView)
-        textView.text = "Новый текст"
+        val Button = findViewById<Button>(R.id.button)
+        var isHello = true
+
+        Button.setOnClickListener {
+
+            if (isHello) {
+                Button.text = "Привет"
+            } else {
+                Button.text = "Пока"
+            }
+
+            isHello = !isHello
+        }
 
     }
 }
